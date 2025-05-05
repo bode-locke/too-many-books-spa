@@ -33,7 +33,8 @@
   "theme": {
     "toggle": "Toggle theme",
     "light": "Light Mode",
-    "dark": "Dark Mode"
+    "dark": "Dark Mode",
+    "system": "System"
   },
   "language": {
     "en": "English",

@@ -27,24 +27,24 @@ module.exports = {
           // Dark mode colors
           dark: {
             primary: {
-              DEFAULT: '#60a5fa', // Blue-400
-              light: '#93c5fd',   // Blue-300
-              dark: '#3b82f6',    // Blue-500
+              DEFAULT: '#10b981', // Muted green
+              light: '#34d399',   // Lighter green
+              dark: '#059669',    // Darker green
             },
             secondary: {
-              DEFAULT: '#94a3b8', // Slate-400
-              light: '#cbd5e1',   // Slate-300
-              dark: '#64748b',    // Slate-500
+              DEFAULT: '#a1a1a1', // Neutral gray
+              light: '#d1d1d1',   // Light gray
+              dark: '#717171',    // Dark gray
             },
             background: {
-              DEFAULT: '#0f172a', // Slate-900
-              light: '#1e293b',   // Slate-800
-              dark: '#020617',    // Slate-950
+              DEFAULT: '#2d2d2d', // Soft dark gray
+              light: '#3d3d3d',   // Slightly lighter
+              dark: '#1d1d1d',    // Darker shade
             },
             text: {
-              DEFAULT: '#f1f5f9', // Slate-100
-              light: '#e2e8f0',   // Slate-200
-              dark: '#cbd5e1',    // Slate-300
+              DEFAULT: '#e0e0e0', // Soft white
+              light: '#f0f0f0',   // Light white
+              dark: '#b0b0b0',    // Muted white
             },
           },
           // Utility colors

@@ -150,6 +150,6 @@ const handleSubmit = async () => {
 
 definePageMeta({
   layout: 'default',
-  colorMode: 'light'
+  // colorMode: 'light'
 })
 </script> 

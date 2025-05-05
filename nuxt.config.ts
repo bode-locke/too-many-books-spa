@@ -13,15 +13,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n'
   ],
   colorMode: {
+    classSuffix: '',
     preference: 'light',
     fallback: 'light',
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
+    storageKey: 'nuxt-color-mode',
     storage: 'localStorage',
-    storageKey: 'nuxt-color-mode'
+    dataValue: 'theme'
   },
   i18n: {
     langDir: '../i18n/locales',
@@ -50,7 +47,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-    title: 'Too Many Books',
+      title: 'Too Many Books',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -58,19 +55,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ],
-      script: [
-        {
-          innerHTML: `
-            (function() {
-              const savedTheme = localStorage.getItem('vueuse-color-scheme');
-              if (!savedTheme) {
-                localStorage.setItem('vueuse-color-scheme', 'light');
-                document.documentElement.classList.remove('dark');
-              }
-            })();
-          `
-        }
       ]
     }
   },

@@ -77,9 +77,9 @@ import { useRouter } from 'vue-router'
 import { useColorMode } from '#imports'
 
 const { isAuthenticated, isLoading: isAuthLoading, logout, init } = useAuth()
-const colorMode = useColorMode()
 const { locale, setLocale } = useI18n()
 const router = useRouter()
+const colorMode = useColorMode()
 
 // Watch for route changes to update auth state
 watch(
@@ -93,7 +93,7 @@ watch(
 )
 
 const toggleTheme = () => {
-  colorMode.value = colorMode.value === 'dark' ? 'light' : 'dark'
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
 const toggleLanguage = () => {

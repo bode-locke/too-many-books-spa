@@ -33,7 +33,8 @@
   "theme": {
     "toggle": "Changer le thème",
     "light": "Mode clair",
-    "dark": "Mode sombre"
+    "dark": "Mode sombre",
+    "system": "Système"
   },
   "language": {
     "en": "Anglais",

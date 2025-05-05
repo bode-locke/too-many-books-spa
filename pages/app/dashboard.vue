@@ -104,7 +104,7 @@ const readingCount = ref(0)
 definePageMeta({
   layout: 'default',
   middleware: 'auth',
-  colorMode: 'light'
+  // colorMode: 'light'
 })
 
 onMounted(async () => {

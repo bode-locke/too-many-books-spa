@@ -173,6 +173,6 @@ const { isAuthenticated } = useAuth()
 
 definePageMeta({
   layout: 'default',
-  colorMode: 'light'
+  // colorMode: 'light'
 })
 </script>

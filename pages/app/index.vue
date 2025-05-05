@@ -8,7 +8,7 @@
 definePageMeta({
   layout: 'default',
   middleware: 'auth',
-  colorMode: 'light'
+  // colorMode: 'light'
 })
 
 
