@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Too Many Books",
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "loggingIn": "Logging in...",
+    "registering": "Creating account...",
+    "createAccount": "Create your account",
+    "welcomeBack": "Welcome back to your digital library",
+    "joinUs": "Join our community of book lovers",
+    "error": {
+      "invalidCredentials": "Invalid email or password",
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required",
+      "nameRequired": "Name is required",
+      "passwordsDontMatch": "Passwords don't match"
+    }
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "en": "English",
+    "fr": "French"
+  },
+  "landing": {
+    "tagline": "Collection Management • Wishlist • Reviews",
+    "title": "Your Digital Library",
+    "subtitle": "Your Reading Journey",
+    "getStarted": "Get Started",
+    "goToDashboard": "Go to Dashboard",
+    "features": {
+      "title": "Your Reading Companion",
+      "subtitle": "Everything you need to manage your book collection and reading journey",
+      "collection": {
+        "title": "Smart Collection",
+        "description": "Build and organize your digital library. Scan barcodes to add books instantly, create custom categories, and keep track of your reading progress."
+      },
+      "wishlist": {
+        "title": "Wishlist & Alerts",
+        "description": "Never miss a new release. Add books to your wishlist and get notified when they become available. Track upcoming releases and manage your reading queue."
+      },
+      "reviews": {
+        "title": "Reviews & Notes",
+        "description": "Share your thoughts with the community. Rate books with stars, write personal reviews, and add private notes. Connect with other readers through public reviews."
+      }
+    }
+  }
+} 

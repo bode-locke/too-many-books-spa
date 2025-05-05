@@ -1,0 +1,65 @@
+{
+  "app": {
+    "title": "Too Many Books",
+    "loading": "Chargement...",
+    "error": "Erreur"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "dashboard": "Tableau de bord",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "name": "Nom",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "loggingIn": "Connexion en cours...",
+    "registering": "Création du compte...",
+    "createAccount": "Créer votre compte",
+    "welcomeBack": "Bienvenue dans votre bibliothèque numérique",
+    "joinUs": "Rejoignez notre communauté de lecteurs",
+    "error": {
+      "invalidCredentials": "Email ou mot de passe invalide",
+      "emailRequired": "L'email est requis",
+      "passwordRequired": "Le mot de passe est requis",
+      "nameRequired": "Le nom est requis",
+      "passwordsDontMatch": "Les mots de passe ne correspondent pas"
+    }
+  },
+  "theme": {
+    "toggle": "Changer le thème",
+    "light": "Mode clair",
+    "dark": "Mode sombre"
+  },
+  "language": {
+    "en": "Anglais",
+    "fr": "Français"
+  },
+  "landing": {
+    "tagline": "Gestion de collection • Liste de souhaits • Avis",
+    "title": "Votre Bibliothèque Numérique",
+    "subtitle": "Votre Aventure Littéraire",
+    "getStarted": "Commencer",
+    "goToDashboard": "Aller au Tableau de Bord",
+    "features": {
+      "title": "Votre Compagnon de Lecture",
+      "subtitle": "Tout ce dont vous avez besoin pour gérer votre collection de livres et votre parcours de lecture",
+      "collection": {
+        "title": "Collection Intelligente",
+        "description": "Construisez et organisez votre bibliothèque numérique. Scannez les codes-barres pour ajouter des livres instantanément, créez des catégories personnalisées et suivez votre progression de lecture."
+      },
+      "wishlist": {
+        "title": "Liste de Souhaits & Alertes",
+        "description": "Ne manquez jamais une nouvelle sortie. Ajoutez des livres à votre liste de souhaits et soyez notifié lors de leur disponibilité. Suivez les sorties à venir et gérez votre file d'attente de lecture."
+      },
+      "reviews": {
+        "title": "Avis & Notes",
+        "description": "Partagez vos pensées avec la communauté. Notez les livres avec des étoiles, écrivez des avis personnels et ajoutez des notes privées. Connectez-vous avec d'autres lecteurs grâce aux avis publics."
+      }
+    }
+  }
+} 
