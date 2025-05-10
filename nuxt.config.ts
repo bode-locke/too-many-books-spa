@@ -1,5 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
@@ -10,16 +8,41 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    'pinia-plugin-persistedstate/nuxt',
+    'nuxt-api-shield',
+    '@nuxt/image',
+    'nuxt-icon',
   ],
+  image: {
+    domains: ['images.epagine.fr'], // ✅ autorise les images externes
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    },
+  },
   colorMode: {
-    classSuffix: '',
     preference: 'light',
     fallback: 'light',
     storageKey: 'nuxt-color-mode',
     storage: 'localStorage',
-    dataValue: 'theme'
+    dataValue: 'theme',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    disableTransition: true
   },
+  // pinia: {
+  //   // autoImports: ['defineStore'],
+  //   // persist: {
+  //   //   storage: 'localStorage',
+  //   //   paths: ['auth.isAuthenticated']
+  //   // }
+  // },
   i18n: {
     langDir: '../i18n/locales',
     locales: [
@@ -32,18 +55,32 @@ export default defineNuxtConfig({
         code: 'fr',
         file: 'fr.json',
         name: 'Français',
-        isCatchallLocale: true
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
     lazy: true,
     strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
+      cookieKey: 'lang',
       redirectOn: 'root',
       alwaysRedirect: true
     }
+  },
+  nuxtApiShield: {
+    limit: {
+      max: 100,        
+      duration: 60,  
+      ban: 3600,      
+    },
+    delayOnBan: true, 
+    errorMessage: "Too Many Requests",
+    retryAfterHeader: true,
+    log: {
+      path: "logs",
+      attempts: 100
+    },
+    routes: ['/api/']
   },
   app: {
     head: {
@@ -55,34 +92,45 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ]
+      ],
     }
   },
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE_URL || 'http://localhost:8000/api'
+      apiBase: process.env.API_BASE_URL + '/api'
     }
   },
   pages: true,
-  router: {
-    options: {
-      strict: false
-    }
-  },
   nitro: {
     devProxy: {
       '/api': {
-        target: process.env.API_BASE_URL || 'http://localhost:8000',
+        target: process.env.API_BASE_URL ,
         changeOrigin: true,
         prependPath: false,
         cookieDomainRewrite: 'localhost',
         headers: {
-          'Access-Control-Allow-Origin': process.env.FRONTEND_URL || 'http://localhost:3000',
+          'Access-Control-Allow-Origin': process.env.FRONTEND_URL,
           'Access-Control-Allow-Credentials': 'true',
           'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
           'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With'
         }
       }
+    },
+    storage: {
+      shield: {
+        driver: 'memory'
+      }
+    },
+    experimental: {
+      tasks: true
+    },
+    scheduledTasks: {
+      '*/15 * * * *': ['shield:clean'] // clean expired bans every 15 minutes
     }
-  }
+  },
+  icon: {
+    serverBundle: {
+      collections: ['fa']
+    }
+  },
 })

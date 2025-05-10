@@ -1,124 +1,75 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div class="px-4 py-6 sm:px-0">
-        <div class="mb-8">
-          <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-2xl font-bold text-text dark:text-dark-text mb-8">{{ t('dashboard.title') }}</h1>
+
+    <!-- Loading State -->
+    <div v-if="loading" class="flex justify-center">
+      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+
+    <!-- Error State -->
+    <div v-else-if="error" class="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-800 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg">
+      {{ error }}
+    </div>
+
+    <!-- Dashboard Content -->
+    <div v-else class="space-y-8">
+      <!-- Wishlist Section -->
+      <section>
+        <h2 class="text-xl font-semibold text-text dark:text-dark-text mb-4">{{ t('dashboard.wishlist') }}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4">
+          <BookCard
+            v-for="book in wishlist"
+            :key="book.id"
+            :book="book"
+          />
         </div>
-
-        <div v-if="isLoading" class="flex justify-center items-center h-64">
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+        <div v-if="wishlist.length === 0" class="text-center py-8">
+          <p class="text-text/70 dark:text-dark-text/70">{{ t('dashboard.emptyWishlist') }}</p>
         </div>
+      </section>
 
-        <div v-else class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Collection Stats -->
-          <div class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <div class="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
-                      Collection
-                    </dt>
-                    <dd class="flex items-baseline">
-                      <div class="text-2xl font-semibold text-gray-900 dark:text-white">
-                        {{ collectionCount }}
-                      </div>
-                    </dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wishlist Stats -->
-          <div class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                </div>
-                <div class="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
-                      Wishlist
-                    </dt>
-                    <dd class="flex items-baseline">
-                      <div class="text-2xl font-semibold text-gray-900 dark:text-white">
-                        {{ wishlistCount }}
-                      </div>
-                    </dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Currently Reading Stats -->
-          <div class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-            <div class="p-5">
-              <div class="flex items-center">
-                <div class="flex-shrink-0">
-                  <svg class="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <div class="ml-5 w-0 flex-1">
-                  <dl>
-                    <dt class="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
-                      Currently Reading
-                    </dt>
-                    <dd class="flex items-baseline">
-                      <div class="text-2xl font-semibold text-gray-900 dark:text-white">
-                        {{ readingCount }}
-                      </div>
-                    </dd>
-                  </dl>
-                </div>
-              </div>
-            </div>
+      <!-- Collections Section -->
+      <section>
+        <h2 class="text-xl font-semibold text-text dark:text-dark-text mb-4">{{ t('dashboard.collections') }}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div v-for="collection in collections" :key="collection.id" class="bg-background-light dark:bg-dark-background-light rounded-lg p-4">
+            <h3 class="font-medium text-text dark:text-dark-text mb-2">{{ collection.name }}</h3>
+            <p class="text-text/70 dark:text-dark-text/70 text-sm">{{ collection.books.length }} {{ t('dashboard.books') }}</p>
           </div>
         </div>
-      </div>
+        <div v-if="collections.length === 0" class="text-center py-8">
+          <p class="text-text/70 dark:text-dark-text/70">{{ t('dashboard.noCollections') }}</p>
+        </div>
+      </section>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useAuth } from '~/composables/useAuth'
-
-const { isAuthenticated, checkAuth } = useAuth()
-const isLoading = ref(true)
-const collectionCount = ref(0)
-const wishlistCount = ref(0)
-const readingCount = ref(0)
+import { useI18n } from 'vue-i18n'
+import type { Book, Collection } from '~/types'
 
 definePageMeta({
   layout: 'default',
   middleware: 'auth',
-  // colorMode: 'light'
 })
+
+const { t } = useI18n()
+
+const loading = ref(true)
+const error = ref<string | null>(null)
+const wishlist = ref<Book[]>([])
+const collections = ref<Collection[]>([])
 
 onMounted(async () => {
   try {
-    // Simulate loading data
-    setTimeout(() => {
-      collectionCount.value = 42
-      wishlistCount.value = 15
-      readingCount.value = 3
-      isLoading.value = false
-    }, 1000)
-  } catch (error) {
-    console.error('Failed to load dashboard data:', error)
-    isLoading.value = false
+    // TODO: Fetch user's wishlist and collections
+    loading.value = false
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : 'An error occurred'
+    loading.value = false
   }
 })
-</script> 
+</script>

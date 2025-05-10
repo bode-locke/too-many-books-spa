@@ -4,6 +4,15 @@
     "loading": "Loading...",
     "error": "Error"
   },
+  "nav": {
+    "books": "Books"
+  },
+  "common": {
+    "back": "Back",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
   "auth": {
     "login": "Login",
     "register": "Register",
@@ -11,23 +20,21 @@
     "dashboard": "Dashboard",
     "email": "Email",
     "password": "Password",
-    "confirmPassword": "Confirm Password",
     "name": "Name",
     "noAccount": "Don't have an account?",
     "haveAccount": "Already have an account?",
     "rememberMe": "Remember me",
-    "forgotPassword": "Forgot your password?",
+    "forgotPasswordLabel": "Forgot your password?",
     "loggingIn": "Logging in...",
     "registering": "Creating account...",
     "createAccount": "Create your account",
     "welcomeBack": "Welcome back to your digital library",
     "joinUs": "Join our community of book lovers",
-    "error": {
-      "invalidCredentials": "Invalid email or password",
-      "emailRequired": "Email is required",
-      "passwordRequired": "Password is required",
-      "nameRequired": "Name is required",
-      "passwordsDontMatch": "Passwords don't match"
+    "forgotPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your email address and we'll send you a link to reset your password",
+      "submit": "Send Reset Link",
+      "backToLogin": "Remember your password?"
     }
   },
   "theme": {
@@ -40,12 +47,19 @@
     "en": "English",
     "fr": "French"
   },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {current} of {total}",
+    "goToPage": "Go to page {page}"
+  },
   "landing": {
-    "tagline": "Collection Management • Wishlist • Reviews",
-    "title": "Your Digital Library",
-    "subtitle": "Your Reading Journey",
+    "tagline": "Your Personal Book Collection Manager",
+    "title": "Too Many Books",
+    "subtitle": "Not Enough Time",
     "getStarted": "Get Started",
     "goToDashboard": "Go to Dashboard",
+    "browseBooks": "Browse Books",
     "features": {
       "title": "Your Reading Companion",
       "subtitle": "Everything you need to manage your book collection and reading journey",
@@ -62,5 +76,75 @@
         "description": "Share your thoughts with the community. Rate books with stars, write personal reviews, and add private notes. Connect with other readers through public reviews."
       }
     }
+  },
+  "error": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go to Homepage",
+    "goBack": "Go Back"
+  },
+  "footer": {
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "updates": "Updates",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "contact": "Contact",
+    "support": "Support",
+    "status": "Status",
+    "rights": "All rights reserved."
+  },
+  "book": {
+    "unknownAuthor": "Unknown Author",
+    "viewDetails": "View Details",
+    "price": "Price",
+    "type": "Type",
+    "language": "Language",
+    "releaseDate": "Release Date",
+    "publisher": "Publisher",
+    "ean": "EAN",
+    "pagesNumber": "Pages",
+    "review": "Review",
+    "addToWishlist": "Add to wishlist",
+    "noImage": "No image available",
+    "status": {
+      "read": "Read",
+      "reading": "Reading",
+      "to-read": "To Read"
+    }
+  },
+  "books": {
+    "title": "My Library",
+    "wishlist": "My Wishlist",
+    "collections": "My Collections",
+    "books": "books",
+    "filters": "Filters",
+    "emptyWishlist": "Your wishlist is empty",
+    "noCollections": "You haven't created any collections yet",
+    "searchPlaceholder": "Search books by title, author, or publisher...",
+    "noResults": "No books found matching your search criteria",
+    "clearSearch": "Clear search",
+    "clearFilters": "Clear filters",
+    "clearAllFilters": "Clear all filters",
+    "activeFilters": "Active Filters",
+    "filterByAuthor": "Author: {author}",
+    "filterByPublisher": "Publisher: {publisher}",
+    "removeFilter": "Remove filter",
+    "bookTypes": {
+      "title": "Book Types",
+      "novels": "Novels",
+      "bd": "BD",
+      "comics": "Comics",
+      "manga": "Manga"
+    },
+    "sortBy": "Sort by",
+    "sortByPriceDesc": "Price: High to Low",
+    "sortByPriceAsc": "Price: Low to High",
+    "sortByDateDesc": "Release Date: Newest First",
+    "sortByDateAsc": "Release Date: Oldest First",
+    "clearSort": "Clear sort"
   }
 } 

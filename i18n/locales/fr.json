@@ -1,8 +1,15 @@
 {
   "app": {
     "title": "Too Many Books",
+    "switchTo": "Passer en {lang}",
     "loading": "Chargement...",
     "error": "Erreur"
+  },
+  "nav": {
+    "books": "Livres"
+  },
+  "common": {
+    "back": "Retour"
   },
   "auth": {
     "login": "Connexion",
@@ -11,23 +18,21 @@
     "dashboard": "Tableau de bord",
     "email": "Email",
     "password": "Mot de passe",
-    "confirmPassword": "Confirmer le mot de passe",
     "name": "Nom",
     "noAccount": "Vous n'avez pas de compte ?",
     "haveAccount": "Vous avez déjà un compte ?",
     "rememberMe": "Se souvenir de moi",
-    "forgotPassword": "Mot de passe oublié ?",
+    "forgotPasswordLabel": "Mot de passe oublié ?",
     "loggingIn": "Connexion en cours...",
     "registering": "Création du compte...",
     "createAccount": "Créer votre compte",
     "welcomeBack": "Bienvenue dans votre bibliothèque numérique",
     "joinUs": "Rejoignez notre communauté de lecteurs",
-    "error": {
-      "invalidCredentials": "Email ou mot de passe invalide",
-      "emailRequired": "L'email est requis",
-      "passwordRequired": "Le mot de passe est requis",
-      "nameRequired": "Le nom est requis",
-      "passwordsDontMatch": "Les mots de passe ne correspondent pas"
+    "forgotPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe",
+      "submit": "Envoyer le lien",
+      "backToLogin": "Vous vous souvenez de votre mot de passe?"
     }
   },
   "theme": {
@@ -40,12 +45,19 @@
     "en": "Anglais",
     "fr": "Français"
   },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {current} sur {total}",
+    "goToPage": "Aller à la page {page}"
+  },
   "landing": {
     "tagline": "Gestion de collection • Liste de souhaits • Avis",
-    "title": "Votre Bibliothèque Numérique",
-    "subtitle": "Votre Aventure Littéraire",
+    "title": "Too Many Books",
+    "subtitle": "Votre Compagnon de Lecture",
     "getStarted": "Commencer",
     "goToDashboard": "Aller au Tableau de Bord",
+    "browseBooks": "Parcourir les Livres",
     "features": {
       "title": "Votre Compagnon de Lecture",
       "subtitle": "Tout ce dont vous avez besoin pour gérer votre collection de livres et votre parcours de lecture",
@@ -62,5 +74,78 @@
         "description": "Partagez vos pensées avec la communauté. Notez les livres avec des étoiles, écrivez des avis personnels et ajoutez des notes privées. Connectez-vous avec d'autres lecteurs grâce aux avis publics."
       }
     }
+  },
+  "error": {
+    "title": "Page Non Trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "goHome": "Aller à l'Accueil",
+    "goBack": "Retour"
+  },
+  "footer": {
+    "product": "Produit",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "updates": "Mises à jour",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "cookies": "Politique des cookies",
+    "contact": "Contact",
+    "support": "Support",
+    "status": "État du service",
+    "rights": "Tous droits réservés."
+  },
+  "book": {
+    "unknownAuthor": "Auteur inconnu",
+    "viewDetails": "Voir les détails",
+    "price": "Prix",
+    "type": "Type",
+    "language": "Langue",
+    "releaseDate": "Date de parution",
+    "publisher": "Éditeur",
+    "ean": "EAN",
+    "pagesNumber": "Pages",
+    "review": "Avis",
+    "addToWishlist": "Ajouter à la liste de souhaits",
+    "noImage": "Pas d'image disponible",
+    "status": {
+      "read": "Lu",
+      "reading": "En cours",
+      "to-read": "À lire"
+    }
+  },
+  "books": {
+    "title": "Ma Bibliothèque",
+    "wishlist": "Ma Liste de Souhaits",
+    "collections": "Mes Collections",
+    "books": "livres",
+    "filters": "Filtres",
+    "emptyWishlist": "Votre liste de souhaits est vide",
+    "noCollections": "Vous n'avez pas encore créé de collection",
+    "searchPlaceholder": "Rechercher des livres...",
+    "noResults": "Aucun livre ne correspond à votre recherche",
+    "clearSearch": "Effacer la recherche",
+    "clearFilters": "Effacer les filtres",
+    "clearAllFilters": "Effacer tous les filtres",
+    "activeFilters": "Filtres actifs",
+    "filterByAuthor": "Auteur : {author}",
+    "filterByPublisher": "Éditeur : {publisher}",
+    "removeFilter": "Supprimer le filtre",
+    "bookTypes": {
+      "title": "Types de livres",
+      "novels": "Romans",
+      "bd": "BD",
+      "comics": "Comics",
+      "manga": "Manga"
+    },
+    "sortBy": "Trier par",
+    "sortByPriceDesc": "Prix : Du plus élevé au plus bas",
+    "sortByPriceAsc": "Prix : Du plus bas au plus élevé",
+    "sortByDateDesc": "Date de sortie : Plus récent d'abord",
+    "sortByDateAsc": "Date de sortie : Plus ancien d'abord",
+    "clearSort": "Effacer le tri"
+  },
+  "profile": {
+    "edit": "Modifier le profil"
   }
 } 

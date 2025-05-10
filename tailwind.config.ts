@@ -5,9 +5,9 @@ module.exports = {
         colors: {
           // Light mode colors
           primary: {
-            DEFAULT: '#8b5a2b', // Warm brown
+            DEFAULT: '#376068', // Warm brown
             light: '#a67c52',   // Lighter brown
-            dark: '#6b4420',    // Darker brown
+            dark: '#8aabab',    // Darker brown //ICI
           },
           secondary: {
             DEFAULT: '#c9b58e', // Beige
@@ -27,9 +27,9 @@ module.exports = {
           // Dark mode colors
           dark: {
             primary: {
-              DEFAULT: '#10b981', // Muted green
+              DEFAULT: '#72898f', // Muted green
               light: '#34d399',   // Lighter green
-              dark: '#059669',    // Darker green
+              dark: '#8aabab',    // Darker green
             },
             secondary: {
               DEFAULT: '#a1a1a1', // Neutral gray

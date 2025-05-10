@@ -1,5 +1,6 @@
 import { useRuntimeConfig } from '#app'
 import { useErrorHandler } from '~/composables/useErrorHandler'
+import { useAuthStore } from '~/stores/auth'
 
 interface ApiOptions {
   method?: string
@@ -11,13 +12,24 @@ interface ApiOptions {
 export const useApi = () => {
   const config = useRuntimeConfig()
   const { handleError } = useErrorHandler()
+  const authStore = useAuthStore()
 
   const getHeaders = (): Record<string, string> => {
-    return {
+    const headers: Record<string, string> = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'
     }
+
+    // Add cookies to headers for server-side requests
+    if (import.meta.server) {
+      const cookies = useRequestHeaders(['cookie'])
+      if (cookies.cookie) {
+        headers.cookie = cookies.cookie
+      }
+    }
+
+    return headers
   }
 
   const buildUrl = (endpoint: string, params?: Record<string, string>): string => {
@@ -61,6 +73,12 @@ export const useApi = () => {
         redirect: 'follow',
         referrerPolicy: 'no-referrer'
       })
+
+      // If we get a 401, clear auth state and throw
+      if (response.status === 401) {
+        authStore.isAuthenticated = false
+        throw new Error('Unauthorized')
+      }
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}))

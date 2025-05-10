@@ -39,16 +39,30 @@ export interface PaginatedResponse<T> extends ApiResponse<T> {
 }
 
 // Book Types
+export interface Author {
+  id: number
+  name: string
+}
+
+export interface Publisher {
+  id: number
+  name: string
+}
+
 export interface Book {
-  id: string
+  id: number
   title: string
-  author: string
-  isbn?: string
+  imageUri?: string
+  price: number
+  ean: string
   description?: string
-  coverUrl?: string
-  publishedDate?: string
-  addedDate: string
-  status: 'read' | 'reading' | 'to-read'
+  releaseDate: string
+  pagesNumber?: number
+  publisher: Publisher
+  authors: Author[]
+  language: string
+  type: string
+  status?: 'read' | 'reading' | 'to-read'
   rating?: number
   review?: string
 }

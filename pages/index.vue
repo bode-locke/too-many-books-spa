@@ -20,16 +20,22 @@
               <NuxtLink
                 v-if="isAuthenticated"
                 to="/app/dashboard"
-                class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium text-white bg-primary dark:bg-dark-primary hover:bg-primary-dark dark:hover:bg-dark-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl relative z-20"
+                class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium text-white bg-primary dark:bg-dark-primary hover:bg-primary-dark dark:hover:bg-dark-primary-dark transition-all duration-300 shadow-md hover:shadow-lg relative z-20"
               >
                 {{ $t('landing.goToDashboard') }}
               </NuxtLink>
               <NuxtLink
                 v-else
                 to="/auth/register"
-                class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium text-white bg-primary dark:bg-dark-primary hover:bg-primary-dark dark:hover:bg-dark-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl relative z-20"
+                class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium text-white bg-primary dark:bg-dark-primary transition-all duration-300 shadow-md hover:shadow-lg relative z-20"
               >
                 {{ $t('landing.getStarted') }}
+              </NuxtLink>
+              <NuxtLink
+                to="/books"
+                class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-lg font-medium text-text dark:text-dark-text bg-background-light dark:bg-dark-background-light hover:bg-background-lighter dark:hover:bg-dark-background-lighter transition-all duration-300 shadow-md hover:shadow-lg relative z-20"
+              >
+                {{ $t('landing.browseBooks') }}
               </NuxtLink>
             </div>
           </div>
@@ -173,6 +179,5 @@ const { isAuthenticated } = useAuth()
 
 definePageMeta({
   layout: 'default',
-  // colorMode: 'light'
 })
 </script>

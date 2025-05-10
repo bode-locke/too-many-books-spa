@@ -1,0 +1,25 @@
+{
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "email": "Email",
+    "password": "Mot de passe",
+    "name": "Nom",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "registering": "Inscription en cours...",
+    "loggingIn": "Connexion en cours...",
+    "createAccount": "Créez votre compte",
+    "joinUs": "Rejoignez-nous et commencez à gérer vos livres",
+    "welcomeBack": "Bon retour",
+    "signInToContinue": "Connectez-vous pour continuer à gérer vos livres"
+  },
+  "books": {
+    "noResults": "Aucun livre trouvé"
+  },
+  "book": {
+    "viewDetails": "Voir les détails",
+    "addToWishlist": "Ajouter à la liste de souhaits",
+    "noImage": "Pas d'image disponible"
+  }
+} 

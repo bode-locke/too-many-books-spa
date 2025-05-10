@@ -1,0 +1,22 @@
+{
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "registering": "Registering...",
+    "loggingIn": "Logging in...",
+    "createAccount": "Create your account",
+    "joinUs": "Join us and start managing your books",
+    "welcomeBack": "Welcome back",
+    "signInToContinue": "Sign in to continue managing your books"
+  },
+  "book": {
+    "viewDetails": "View details",
+    "addToWishlist": "Add to wishlist",
+    "noImage": "No image available"
+  }
+} 
